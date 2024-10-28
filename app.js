@@ -31,3 +31,25 @@ if (tool === 'line') {
     ctx.arc(startX, startY, 10, 0, Math.PI*2,false);
     ctx.stroke();
 }}
+
+//Task 3: Implement shape drawing logic for lines, rectangles, and circles.
+canvas.addEventListener('mousedown', (e) => {
+    drawing = true;
+    startX = e.offsetX;
+    startY = e.offsetY;
+});
+
+canvas.addEventListener('mousemove', (e) => {
+    if (drawing) {
+        draw(e.offsetX, e.offsetY);
+    }
+});
+
+canvas.addEventListener('mouseup', () => {
+    drawing = false;
+    ctx.closePath();
+});
+
+canvas.addEventListener('mouseout', () => {
+    drawing = false;
+});
