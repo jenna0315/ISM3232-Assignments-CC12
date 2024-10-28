@@ -53,3 +53,8 @@ canvas.addEventListener('mouseup', () => {
 canvas.addEventListener('mouseout', () => {
     drawing = false;
 });
+
+//Task 4: Add Color Selection and Canvas Clearing
+document.querySelector("#clear").addEventListener("click",()=>{
+    ctx.clearRect(0,0,width,height)
+});
